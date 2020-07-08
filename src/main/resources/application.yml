@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: Example
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/useport?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: 123456
+    maxActive: 100
+    maxIdle: 60
+    minIdle: 40
+    maxWait: 30000
+    removeAbandoned: true
+    removeAbandonedTimeout: 120
+    validationInterval: 30000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+logging:
+  level: # define logging level of each specific package
+    com:
+      shark:
+        example: TRACE
+  path: log
+server:
+  port: 9080
